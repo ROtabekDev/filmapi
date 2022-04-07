@@ -15,6 +15,7 @@ jobs:
           - 5432:5432
 
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
@@ -22,5 +23,9 @@ jobs:
           python-version: 3.9
       - name: Install Requirements
         run: pip install -r requirements.txt
+      - name: ENV
+        run: export DJANGO_SETTINGS_MODULE=netflix.settings
       - name: Run tests
         run: pytest
+      env:
+        DJANGO_SETTINGS_MODULE: netflix.settings
