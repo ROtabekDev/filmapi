@@ -25,4 +25,4 @@ jobs:
       - name: ENV
         run: export DJANGO_SETTINGS_MODULE=netflix.settings
       - name: Run tests
-        run: pytest
+        run: python manage.py test
