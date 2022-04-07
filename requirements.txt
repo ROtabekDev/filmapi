@@ -28,3 +28,5 @@ pip~=21.2.4
 psycopg2~=2.9.3
 six~=1.16.0
 setuptools~=58.1.0
+pytest==6.2.4
+pytest-django==4.3.0
