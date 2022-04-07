@@ -26,25 +26,25 @@ class TestMovieViewSet(TestCase):
         response = self.client.get('/movies/')
         data = response.data
 
-        self.assertEquals(response.status_code, 200)
-        self.assertEquals(len(data), 3)
-        self.assertEquals(data[0]['title'], "Janob hec kim")
-        self.assertEquals(data[0]['actors'][0]['first_name'], "Alisher")
-        self.assertEquals(data[0]['actors'][1]['first_name'], "Asal")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(data), 3)
+        self.assertEqual(data[0]['title'], "Janob hec kim")
+        self.assertEqual(data[0]['actors'][0]['first_name'], "Alisher")
+        self.assertEqual(data[0]['actors'][1]['first_name'], "Asal")
 
     def test_search(self):
         response = self.client.get('/movies/?search=Janob')
         data = response.data
 
-        self.assertEquals(response.status_code, 200)
-        self.assertEquals(data[0]['title'], "Janob hec kim")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(data[0]['title'], "Janob hec kim")
 
     def test_ordering(self):
         response = self.client.get('/movies/?ordering=-imdb')
         data = response.data
 
-        self.assertEquals(response.status_code, 200)
-        self.assertEquals(len(data), 3)
-        self.assertEquals(data[0]['title'], "Tundan-tonggacha")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(len(data), 3)
+        self.assertEqual(data[0]['title'], "Tundan-tonggacha")
         self.assertTrue(data[0]['imdb'] == 3)
         self.assertFalse(data[0]['actors'][0]['first_name'] == 'Ulug`bek')
