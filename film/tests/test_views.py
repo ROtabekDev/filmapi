@@ -2,11 +2,6 @@ from django.test import TestCase, Client
 
 from ..models import Movie
 
-import os
-import django
-
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myproject.settings")
-django.setup()
 
 
 class TestMovieViewSet(TestCase):
