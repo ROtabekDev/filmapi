@@ -24,7 +24,5 @@ jobs:
           python-version: 3.9
       - name: Install Requirements
         run: pip install -r requirements.txt
-      - name: ENV
-        run: export DJANGO_SETTINGS_MODULE=netflix.settings
       - name: Run tests
         run: python manage.py test
