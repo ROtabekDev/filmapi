@@ -6,7 +6,7 @@ from rest_framework.permissions import AllowAny
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Netflix Rest API",
+      title="Netflix API",
       default_version='v1',
       description="Test description",
       contact=openapi.Contact(email="exmple@gmail.com"),
