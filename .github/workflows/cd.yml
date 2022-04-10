@@ -30,7 +30,7 @@ jobs:
     needs: test
     steps:
       - name: multiple command
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@cd
         with:
           host: 127.0.0.1
           username: ${{ secrets.USERNAME }}
