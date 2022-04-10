@@ -32,7 +32,7 @@ jobs:
       - name: multiple command
         uses: appleboy/ssh-action@master
         with:
-          host: 127.0.0.1
+          host: 164.92.160.108
           username: ${{ secrets.USERNAME }}
           key: ${{ secrets.KEY }}
           script: |
