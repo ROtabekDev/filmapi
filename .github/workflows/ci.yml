@@ -22,7 +22,15 @@ jobs:
       - uses: actions/setup-python@v3
         with:
           python-version: 3.9
+      - name: linting
+        uses: programmingwithalex/pylinters@v1.4.2
+        with:
+          python-root: '.'
+          flake8-flags: ''
+          mypy-flags: '--ignore-missing-imports'
+          fail-on-isort: false
+          skip-flake8: true
       - name: Install Requirements
         run: pip install -r requirements.txt
       - name: Run tests
-        run: python -m pytest 
+        run: flake8
